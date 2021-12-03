@@ -24,45 +24,18 @@
     </parent>
 
     <profiles>
-        <profile>
-            <id>lcl</id>
-            <properties>
-                <activatedProperties>lcl</activatedProperties>
-            </properties>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-        </profile>
 
-        <profile>
-            <id>dev</id>
-            <properties>
-                <activatedProperties>dev</activatedProperties>
-            </properties>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-        </profile>
-
-        <profile>
-            <id>act</id>
-            <properties>
-                <activatedProperties>act</activatedProperties>
-            </properties>
-        </profile>
-
-        <profile>
-            <id>hml</id>
-            <properties>
-                <activatedProperties>hml</activatedProperties>
-            </properties>
-        </profile>
 
         <profile>
             <id>prd</id>
             <properties>
                 <activatedProperties>prd</activatedProperties>
             </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+
+
         </profile>
 
     </profiles>
