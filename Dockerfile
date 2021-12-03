@@ -1,15 +1,20 @@
-FROM registry-docker.riachuelo.net:5000/openjdk:8-jre
+FROM adoptopenjdk/openjdk11:ubi
 
-MAINTAINER Riachuelo Developer Team
 
-VOLUME /config
+COPY /target/*.jar /usr/app/app.jar
 
-ADD target/bilh-bilhetagem-transacoes-java.jar bilh-bilhetagem-transacoes-java.jar
 
-COPY target/classes/logback.xml /config/
-
-COPY target/classes/config/* /config/
-
-ENV JAVA_OPTS="-Xmx256m -Xms256m -XX:MetaspaceSize=48m -XX:+UseG1GC -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -Dlogging.config=file:/config/logback.xml -Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true"
-
-ENTRYPOINT [ "sh", "-c", "java $JAVA_OPTS -jar bilh-bilhetagem-transacoes-java.jar" ]
+WORKDIR /usr/app
+EXPOSE 8082
+CMD echo "START"; \
+java \
+-Ddd.profiling.enabled=false \
+-Ddd.logs.injection=true \
+-Ddd.trace.analytics.enabled=false \
+-Ddd.env=prd \
+-Dspring.profiles.active=${profile} \
+-Dstyle.color=never \
+-Dspring.output.ansi.enabled=never \
+-Duser.timezone=America/Sao_Paulo \
+-jar app.jar; \
+echo "FINISH"
