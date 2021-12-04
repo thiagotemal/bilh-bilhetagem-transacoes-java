@@ -78,9 +78,6 @@ public class BillsController {
 
 
     @RequestMapping(method = RequestMethod.POST,path = "/v1/transactions/bills" )
-    @ApiImplicitParams(
-            @ApiImplicitParam(name = "x-transaction-id", value = "Transaction ID", required = true, allowEmptyValue = false, paramType = "header", dataTypeClass = String.class, example = "3bd28702-0fc1-4802-814a-9de747de3de2", type = "string")
-    )
     @ApiOperation(" Enviar bilhetagem ")
     @ApiResponses(
             @ApiResponse(

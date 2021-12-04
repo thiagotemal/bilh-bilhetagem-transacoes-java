@@ -36,7 +36,7 @@ public class AccountEntry implements Serializable {
 
 
 	@ApiModelProperty( example = "2021-12-31", hidden = true)
-	private LocalDateTime creationDate = LocalDateTime.now();
+	private LocalDateTime creationDate ;
 
 	@ApiModelProperty( example = "2021-12-31")
 	private LocalDate transactionDate ;

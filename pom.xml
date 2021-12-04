@@ -5,7 +5,7 @@
 
     <groupId>br.com.temal.pa</groupId>
     <artifactId>bilh-bilhetagem-transacoes-java</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <name>bilh-bilhetagem-transacoes-java</name>
     <description>Demo project for Spring Boot</description>
 
